@@ -72,7 +72,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts}": [
+    "*.ts": [
       "tslint -p tsconfig.json -c tslint.json"
     ]
   }
