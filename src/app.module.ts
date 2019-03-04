@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 
+import { GraphQLOptions } from './graphql.options';
+
 @Module({
   imports: [
-    GraphQLModule.forRoot({
-      typePaths: ['./**/*.graphql']
+    GraphQLModule.forRootAsync({
+      useClass: GraphQLOptions
     })
   ]
 })
