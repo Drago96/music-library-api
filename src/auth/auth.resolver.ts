@@ -1,9 +1,9 @@
 import { Resolver, Mutation, Args } from '@nestjs/graphql';
 import { UnprocessableEntityException } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 
 import { AuthCreateDto } from './dto/auth-create.dto';
 import { UsersService } from 'src/users/users.service';
-import { JwtService } from '@nestjs/jwt';
 
 @Resolver('Auth')
 export class AuthResolver {
