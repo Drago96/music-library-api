@@ -17,6 +17,6 @@
   },
   "rulesDirectory": [],
   "linterOptions": {
-    "exclude": ["prisma/generated/**/*.ts"]
+    "exclude": ["src/prisma/prisma.binding.ts"]
   }
 }

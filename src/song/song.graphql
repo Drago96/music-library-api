@@ -1,4 +1,0 @@
-type Song {
-  id: ID!
-  name: String!
-}

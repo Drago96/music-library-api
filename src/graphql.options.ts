@@ -4,14 +4,14 @@ import { join } from 'path';
 
 @Injectable()
 export class GraphQLOptions implements GqlOptionsFactory {
-  createGqlOptions(): Promise<GqlModuleOptions> | GqlModuleOptions {
+  createGqlOptions(): GqlModuleOptions {
     return {
-      typePaths: ['./**/*.graphql'],
-      installSubscriptionHandlers: true,
+      typePaths: ['./src/!(prisma)/**/*.graphql'],
       definitions: {
         path: join(process.cwd(), 'src/graphql.schema.ts'),
         outputAs: 'class'
-      }
+      },
+      context: ({ req }) => ({ req })
     };
   }
 }

@@ -1,0 +1,11 @@
+projects:
+  database:
+    schemaPath: src/prisma/prisma-types.graphql
+    extensions:
+      endpoints:
+        default: http://Splot-Publi-3W1GK4W09127-546103147.eu-west-1.elb.amazonaws.com/music-library-api/dev
+      codegen:
+        - generator: prisma-binding
+          language: typescript
+          output:
+            binding: src/prisma/prisma.binding.ts

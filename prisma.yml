@@ -1,0 +1,2 @@
+endpoint: http://Splot-Publi-3W1GK4W09127-546103147.eu-west-1.elb.amazonaws.com/music-library-api/dev
+datamodel: src/prisma/datamodel.graphql
