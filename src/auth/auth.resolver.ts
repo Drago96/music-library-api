@@ -2,8 +2,6 @@ import { Resolver, Mutation, Args } from '@nestjs/graphql';
 
 import { AuthService } from './auth.service';
 import { AuthCreateDto } from './dto/auth-create.dto';
-import { GqlAuthGuard } from './auth.guard';
-import { UseGuards } from '@nestjs/common';
 
 @Resolver('Auth')
 export class AuthResolver {
