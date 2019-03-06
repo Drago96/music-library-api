@@ -14,6 +14,6 @@ import { GqlAuthGuard } from './auth.guard';
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({ secretOrPrivateKey: config.get('jwt.secret') })
   ],
-  providers: [AuthResolver, JwtStrategy, GqlAuthGuard]
+  providers: [AuthResolver, JwtStrategy]
 })
 export class AuthModule {}
