@@ -1,6 +1,6 @@
 import { Resolver, Mutation, Args } from '@nestjs/graphql';
-import { UnprocessableEntityException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
+import { AuthenticationError } from 'apollo-server-express';
 
 import { AuthCreateDto } from './dto/auth-create.dto';
 import { UsersService } from 'src/users/users.service';
@@ -20,7 +20,7 @@ export class AuthResolver {
     );
 
     if (!user) {
-      throw new UnprocessableEntityException('Invalid username or password');
+      throw new AuthenticationError('invalid username or password');
     }
 
     const token = this.jwtService.sign({ sub: user.id });

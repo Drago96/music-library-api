@@ -1,7 +1,7 @@
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 
-import { GraphQLOptions } from './graphql.options';
+import { GraphQLOptions } from './graphql/graphql.options';
 
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';

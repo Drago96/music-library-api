@@ -6,9 +6,9 @@ import { join } from 'path';
 export class GraphQLOptions implements GqlOptionsFactory {
   createGqlOptions(): GqlModuleOptions {
     return {
-      typePaths: ['./src/!(prisma)/**/*.graphql'],
+      typePaths: ['src/!(prisma)/**/*.graphql'],
       definitions: {
-        path: join(process.cwd(), 'src/graphql.schema.ts'),
+        path: join(process.cwd(), 'src/graphql/graphql.schema.ts'),
         outputAs: 'class'
       },
       context: ({ req }) => ({ req })

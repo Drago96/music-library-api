@@ -6,7 +6,6 @@ import { UsersModule } from 'src/users/users.module';
 import { JwtStrategy } from './jwt.strategy';
 import { config } from 'src/config/config';
 import { AuthResolver } from './auth.resolver';
-import { GqlAuthGuard } from './auth.guard';
 
 @Module({
   imports: [
