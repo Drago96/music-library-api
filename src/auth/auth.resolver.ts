@@ -1,9 +1,11 @@
 import { Resolver, Mutation, Args } from '@nestjs/graphql';
 import { JwtService } from '@nestjs/jwt';
 import { AuthenticationError } from 'apollo-server-express';
+import { UseFilters } from '@nestjs/common';
 
 import { AuthCreateDto } from './dto/auth-create.dto';
 import { UsersService } from 'src/users/users.service';
+import { PrismaExceptionFilter } from 'src/prisma/exception-filters/prisma-exception-filter';
 
 @Resolver('Auth')
 export class AuthResolver {
@@ -32,6 +34,9 @@ export class AuthResolver {
   }
 
   @Mutation()
+  @UseFilters(
+    new PrismaExceptionFilter({ unique: { message: 'email is already taken' } })
+  )
   async signUp(@Args() authPayload: AuthCreateDto) {
     const user = await this.usersService.create(
       authPayload.email,

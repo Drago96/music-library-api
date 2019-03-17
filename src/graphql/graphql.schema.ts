@@ -1,5 +1,11 @@
+
+/** ------------------------------------------------------
+ * THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+ * -------------------------------------------------------
+ */
+
 /* tslint:disable */
-export abstract class Auth {
+export class Auth {
     user: User;
     token: string;
 }
@@ -14,7 +20,7 @@ export abstract class IQuery {
     abstract temp__(): boolean | Promise<boolean>;
 }
 
-export abstract class User {
+export class User {
     id: string;
     email: string;
 }
