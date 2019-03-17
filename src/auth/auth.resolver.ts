@@ -5,7 +5,7 @@ import { UseFilters } from '@nestjs/common';
 
 import { AuthCreateDto } from './dto/auth-create.dto';
 import { UsersService } from 'src/users/users.service';
-import { PrismaExceptionFilter } from 'src/prisma/exception-filters/prisma-exception-filter';
+import { PrismaExceptionFilter } from 'src/prisma/exception-filters/prisma.exception-filter';
 
 @Resolver('Auth')
 export class AuthResolver {
